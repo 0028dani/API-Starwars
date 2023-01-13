@@ -1,0 +1,19 @@
+{
+  "name": "api-starwars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:teste": "cucumber-js -t\"@person\"",
+    "test:planets": "cucumber-js -t\"@planets\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^8.9.0",
+    "axios": "^1.2.1",
+    "chai": "^4.3.7",
+    "cucumber": "^6.0.7",
+    "deep-equal-in-any-order": "^2.0.1"
+  }
+}
