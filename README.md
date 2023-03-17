@@ -1,4 +1,6 @@
 # API-Starwars
+###### Projeto consulta da API Star Wars utilizando biblioteca chai.
+###### Os Star Wars é uma API que trás informações sobre personagens, planetas, naves e outras informações dos filmes de star wars.
 
 # Para configurar o Ambiente:
  
