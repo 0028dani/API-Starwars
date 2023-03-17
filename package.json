@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:teste": "cucumber-js -t\"@person\"",
-    "test:planets": "cucumber-js -t\"@planets\""
+    "test:person": "cucumber-js -t\"@person\"",
+    "test:planets": "cucumber-js -t\"@planets\"",
+    "test:debug": "cucumber-js -t\"@debug\""
   },
   "author": "",
   "license": "ISC",
