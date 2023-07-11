@@ -9,6 +9,8 @@
 ###### Instalar as dependencias executando o seguinte comando na raíz da pasta do seu projeto: npm install
 
 # Para iniciar os testes, execute um o seguintes comandos no terminal do VS Code:
-###### npm run test:person
+** npm run test:person **
 ###### npm run test:planets
 
+* teste
+  
