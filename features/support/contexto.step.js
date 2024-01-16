@@ -3,10 +3,19 @@ const { setWorldConstructor } = require("@cucumber/cucumber");
 const { default: json_formatter } = require("cucumber/lib/formatter/json_formatter");
 
 class Contexto {
-    async acessarFilme() {
-        var { pessoa } = this;
-        var url = `https://swapi.dev/api/people/${pessoa}`;
+    async endpointsStarwars() {
+        var { pessoa, nomes, endpoint } = this;
 
+        var endpoints = {
+            a: `https://swapi.dev/api/people/${pessoa}`,
+            b: `https://swapi.dev/api/planets/${nomes}`
+        }
+        var url = endpoints[endpoint];
+        return url;
+    }
+
+    async acessarFilme() {
+        var url = await this.endpointsStarwars();
         var response = await axios.get(url);
         //console.log(" API dos filmes " + JSON.stringify(response.data.films))
         //console.log(" API de starships " + JSON.stringify(response.data.starships))
@@ -25,9 +34,9 @@ class Contexto {
     }
 
     async planets() {
-        var { nomes } = this;
-        var url = `https://swapi.dev/api/planets/${nomes}`;
+        var url = await this.endpointsStarwars();
         var response = await axios.get(url);
+        //console.log("teste + " + reponse.data)
         return {
             ...response.data
         }

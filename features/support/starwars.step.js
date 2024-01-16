@@ -9,12 +9,13 @@ Given(/^que sou a pessoa (.*)$/, async function (pessoa) {
   this.pessoa = pessoa;
 });
 
-When(/^acessar a API$/, async function () {
+When(/^acessar a API no endpoint (.*)$/, { timeout: 1000 * 50000 }, async function (endpoint) {
+  this.endpoint = endpoint;
   var response = await this.acessarFilme()
   this.films = response.filmes;
 });
 
-Then(/^deve apresentar o filme (.*) com titulo (.*)$/, async function (filme, titulo) {
+Then(/^deve apresentar o filme (.*) com titulo (.*)$/, { timeout: 1000 * 50000 }, async function (filme, titulo) {
   var response = await this.filme(filme)
 
   this.title = response.title;
@@ -33,7 +34,8 @@ Given(/^que tenho os nomes (.*) dos planetas$/, async function (nomes) {
   this.nomes = nomes;
 });
 
-When(/^acessar a API de planets$/, async function () {
+When(/^acessar a API de planets no endpoint (.*)$/, { timeout: 1000 * 50000 }, async function (endpoint) {
+  this.endpoint = endpoint;
   var response = await this.planets()
   this.nomes = response.planets;
   this.terrain = response.terrain;
@@ -45,7 +47,8 @@ Then(/^deve apresentar o terrain (.*) e population (.*)$/, async function (terra
   expect(population).to.eq(this.population);
 });
 
-When(/^acessar a API de starships$/, async function () {
+When(/^acessar a API de starships no endpoint (.*)$/, async function (endpoint) {
+  this.endpoint = endpoint;
   var response = await this.acessarFilme()
   this.starships = response.starships
 });
