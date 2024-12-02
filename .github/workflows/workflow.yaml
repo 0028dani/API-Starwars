@@ -12,10 +12,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 21.
-      - name: rodando tag planets
+      - name: rodando os testes
         run: |
           npm install
           npm run test:planets
-      - name: run install and test
-        run: rodando tag person
           npm run test:person
