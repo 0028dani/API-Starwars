@@ -16,3 +16,7 @@ jobs:
         run: |
           npm install
           npm run test:planets
+      - name: run install and test
+        run: |
+          npm install
+          npm run test:planets
