@@ -11,20 +11,20 @@ Feature: Consulta filmes
             | 1      | a        | https://swapi.dev/api/films/2/ | The Empire Strikes Back |
 
     @planets
-    Scenario Outline: look up planet names
+    Scenario Outline: Consultar nomes de planetas e a quantidade da populacao
         Given que tenho os nomes <nomes> dos planetas
-        When acessar a API de planets no endpoint <endpoint>
-        Then deve apresentar o terrain <terrain> e population <population>
+        When acessar a API de planetas no endpoint <endpoint>
+        Then deve apresentar o terreno <terreno> e populacao <populacao>
         Examples:
-            | nomes | endpoint | terrain               | population |
+            | nomes | endpoint | terreno               | populacao  |
             | 1     | b        | desert                | 200000     |
             | 2     | b        | grasslands, mountains | 2000000000 |
 
     @person
     Scenario Outline: Consultar a pessoa com os starships
         Given que sou a pessoa <pessoa>
-        When acessar a API de naves no endpoint <endpoint>
-        Then deve apresentar o naves <naves>
+        When acessar a API das naves no endpoint <endpoint>
+        Then deve apresentar as naves <naves>
         Examples:
             | pessoa | endpoint | naves                                                                                                                                                                                   |
             | 10     | a        | https://swapi.dev/api/starships/48/, https://swapi.dev/api/starships/59/, https://swapi.dev/api/starships/64/, https://swapi.dev/api/starships/65/, https://swapi.dev/api/starships/74/ |

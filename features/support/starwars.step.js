@@ -34,7 +34,7 @@ Given(/^que tenho os nomes (.*) dos planetas$/, async function (nomes) {
   this.nomes = nomes;
 });
 
-When(/^acessar a API de planets no endpoint (.*)$/, { timeout: 1000 * 50000 }, async function (endpoint) {
+When(/^acessar a API de planetas no endpoint (.*)$/, { timeout: 1000 * 50000 }, async function (endpoint) {
   this.endpoint = endpoint;
   var response = await this.planets()
   this.nomes = response.planets;
@@ -42,19 +42,19 @@ When(/^acessar a API de planets no endpoint (.*)$/, { timeout: 1000 * 50000 }, a
   this.population = response.population
 });
 
-Then(/^deve apresentar o terrain (.*) e population (.*)$/, async function (terrain, population) {
+Then(/^deve apresentar o terreno (.*) e populacao (.*)$/, async function (terrain, population) {
   expect(terrain).to.eq(this.terrain);
   expect(population).to.eq(this.population);
 });
 
-When(/^acessar a API de naves no endpoint (.*)$/, async function (endpoint) {
+When(/^acessar a API das naves no endpoint (.*)$/, async function (endpoint) {
   this.endpoint = endpoint;
   var response = await this.acessarFilme()
   this.starships = response.starships
 });
 
 
-Then(/^deve apresentar o naves (.*)$/, async function (starships) {
+Then(/^deve apresentar as naves (.*)$/, async function (starships) {
   var listaDeTeste = starships.split(", ");
   expect(this.starships.sort()).to.eql(listaDeTeste.sort());
 
