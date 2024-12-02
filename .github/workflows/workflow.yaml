@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 21.
       - name: rodando os testes
-        run: |
+        run: | 
           npm install
           npm run test:planets
           npm run test:person
