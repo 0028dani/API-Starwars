@@ -23,8 +23,8 @@ Feature: Consulta filmes
     @person
     Scenario Outline: Consultar a pessoa com os starships
         Given que sou a pessoa <pessoa>
-        When acessar a API de starships no endpoint <endpoint>
-        Then deve apresentar o starships <starships>
+        When acessar a API de naves no endpoint <endpoint>
+        Then deve apresentar o naves <naves>
         Examples:
-            | pessoa | endpoint | starships                                                                                                                                                                               |
+            | pessoa | endpoint | naves                                                                                                                                                                                   |
             | 10     | a        | https://swapi.dev/api/starships/48/, https://swapi.dev/api/starships/59/, https://swapi.dev/api/starships/64/, https://swapi.dev/api/starships/65/, https://swapi.dev/api/starships/74/ |

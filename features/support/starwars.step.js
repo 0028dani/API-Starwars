@@ -47,14 +47,14 @@ Then(/^deve apresentar o terrain (.*) e population (.*)$/, async function (terra
   expect(population).to.eq(this.population);
 });
 
-When(/^acessar a API de starships no endpoint (.*)$/, async function (endpoint) {
+When(/^acessar a API de naves no endpoint (.*)$/, async function (endpoint) {
   this.endpoint = endpoint;
   var response = await this.acessarFilme()
   this.starships = response.starships
 });
 
 
-Then(/^deve apresentar o starships (.*)$/, async function (starships) {
+Then(/^deve apresentar o naves (.*)$/, async function (starships) {
   var listaDeTeste = starships.split(", ");
   expect(this.starships.sort()).to.eql(listaDeTeste.sort());
 
